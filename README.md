@@ -1,106 +1,143 @@
+# Node.js Express TypeScript Starter
 
-# Node Express Backend Boilerplate
+A robust and production-ready Node.js backend starter template built with Express.js and TypeScript. This template provides a solid foundation for building scalable RESTful APIs with modern best practices and security features.
 
-This boilerplate provides a foundation for building a Node.js backend server using Express. It includes user authentication features such as user signup and signin. Additionally, it is designed to seamlessly deploy on Vercel for easy scalability and hosting.
+## 🚀 Features
 
-## Highlights
+- **TypeScript** - Written in TypeScript for better type safety and developer experience
+- **Express.js** - Fast, unopinionated, minimalist web framework for Node.js
+- **MongoDB** - MongoDB integration with Mongoose ODM
+- **Security Features**
+  - Rate limiting to prevent abuse
+  - IP whitelisting/blacklisting
+  - CORS enabled
+  - Request size limits
+- **Authentication** - JWT-based authentication system
+- **Environment Configuration** - Dotenv for environment variable management
+- **Development Tools**
+  - Hot reloading with ts-node-dev
+  - TypeScript compilation
+  - Pre-commit hooks for code quality
+  - Cross-env for environment variable management
 
-- User signup: Register new users with unique usernames and passwords.
-- User signin: Allow registered users to authenticate and access protected resources.
-- User referral: User can refer someone and check if user signup by referral.
-- User Authentication: Secure routes and endpoints using JWT (JSON Web Tokens) for authentication.
-- Vercel deployment: Optimized for deployment on the Vercel platform for seamless hosting and scalability.
+## 📋 Prerequisites
 
-## Technologies Used
+- Node.js (v14 or higher)
+- MongoDB
+- Yarn or npm
 
-- **Node.js**: A JavaScript runtime environment for building scalable and efficient server-side applications.
-- **Express.js**: A minimalist web framework for Node.js, providing a robust set of features for web and mobile applications.
-- **JWT (JSON Web Tokens)**: A compact, URL-safe means of representing claims to be transferred between two parties. It's used for securing routes and endpoints.
-- **Vercel**: A cloud platform for static sites and Serverless Functions, providing seamless deployment and scalability.
+## 🛠️ Installation
 
-## Getting Started
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd node-express-ts-starter
+```
 
-1. **Clone the repository**:
+2. Install dependencies:
+```bash
+yarn install
+# or
+npm install
+```
 
-   ```
-   git clone https://github.com/dapp-sculptor/node-express-boilerplate.git
-   ```
+3. Create a `.env` file in the root directory and add your environment variables:
+```env
+PORT=3000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
 
-2. **Install dependencies**:
+## 🚀 Usage
 
-   ```
-   cd your-project
-   npm install
-   ```
+### Development
+```bash
+yarn dev
+# or
+npm run dev
+```
 
-3. **Set up environment variables**:
+### Production
+```bash
+yarn build
+yarn start
+# or
+npm run build
+npm start
+```
 
-   Create a `.env` file in the root directory of your project and add the following variables:
+### Type Checking
+```bash
+yarn ts.check
+# or
+npm run ts.check
+```
 
-   ```
-   # JWT token secret key
-   JWT_SECRET = 
+## 📁 Project Structure
 
-   # DB CONFIGURATION
-   DB_NAME = 
-   DB_USERNAME = 
-   DB_PASSWORD = 
-   DB_HOST = 
-   DB_PORT = 
+```
+├── config/         # Configuration files
+├── middleware/     # Custom middleware
+├── model/         # Database models
+├── routes/        # API routes
+├── utils/         # Utility functions
+├── index.ts       # Application entry point
+├── tsconfig.json  # TypeScript configuration
+└── package.json   # Project dependencies
+```
 
-   # PORT
-   PORT = 
-   ```
+## 🔒 Security Features
 
-4. **Start the server**:
+- **Rate Limiting**: Implements rate limiting to prevent abuse (100 requests per 15 minutes per IP)
+- **IP Filtering**: Supports IP whitelisting and blacklisting
+- **Request Size Limits**: Limits request body size to 50MB
+- **CORS**: Cross-Origin Resource Sharing enabled
+- **Environment Variables**: Secure configuration management
 
-   ```
-   npm start
-   ```
+## 🛠️ Available Scripts
 
-   This will start the server at `http://localhost:9000` by default.
+- `dev`: Start development server with hot reload
+- `start`: Start production server
+- `build`: Build TypeScript files
+- `ts.check`: Run TypeScript type checking
+- `add-build`: Add built files to git
 
-## Usage
+## 📦 Dependencies
 
-- **Signup Endpoint**:
-  - Endpoint: `POST /api/signup`
-  - Request body:
-    ```json
-    {
-      "username": "example",
-      "email": "example",
-      "password": "example",
-      "encodedReferrer": "example"
-    }
-    ```
-- **Signin Endpoint**:
-  - Endpoint: `POST /api/signin`
-  - Request body:
-    ```json
-    {
-      "username": "example",
-      "password": "password"
-    }
-    ```
+### Main Dependencies
+- express: Web framework
+- mongoose: MongoDB ODM
+- jsonwebtoken: JWT authentication
+- bcryptjs: Password hashing
+- cors: Cross-Origin Resource Sharing
+- dotenv: Environment variable management
+- express-rate-limit: Rate limiting
+- express-validator: Request validation
 
-## Deployment on Vercel
+### Development Dependencies
+- typescript: TypeScript support
+- ts-node: TypeScript execution
+- ts-node-dev: Development server with hot reload
+- @types/*: TypeScript type definitions
 
-To deploy your backend on Vercel:
+## 🤝 Contributing
 
-1. Sign up or log in to your Vercel account.
-2. Import your project repository.
-3. Follow the Vercel deployment instructions.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 💭 Feedback and Contributing
+## 📝 License
 
-🙏 Is anyone willing to build more valuable and exciting project, plz contact.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-⛏ Let's build it together!! ⛏
+## 👥 Authors
 
-### Connect With Me:
+- Your Name - Initial work
 
-[![Twitter Badge](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/brjpka)
-[![Mail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nikolic.miloje0507@gmail.com)
-[![Telegram Badge](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/mylord1_1)
-[![Skype Badge](https://img.shields.io/badge/Skype-00AFF0?style=for-the-badge&logo=skype&logoColor=white)](https://join.skype.com/ubWuVGchDEnU)
-[![Discord Badge](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/509337382810550280)
+## 🙏 Acknowledgments
+
+- Express.js team for the amazing framework
+- TypeScript team for the type system
+- MongoDB team for the database
