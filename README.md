@@ -30,7 +30,7 @@ A robust and production-ready Node.js backend starter template built with Expres
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/cabriola/node-express-ts-starter-main.git
 cd node-express-ts-starter
 ```
 
